@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setWebView();
+
+    }
+
+    private void setWebView() {
         myWebView  = new WebView(this);
 
         myWebView.getSettings().setJavaScriptEnabled(true);
@@ -93,11 +98,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     REQUEST_CAMERA_PERMISSION,
                     PERM_CAMERA);
         }
-
     }
-
-
-
 
 
     private boolean hasCameraPermission() {
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
-
+        setWebView();
     }
 
     @Override
